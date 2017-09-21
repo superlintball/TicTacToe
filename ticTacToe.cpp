@@ -144,7 +144,7 @@ void printBoard(int board[3][3])
 	cout << "\t1\t2\t3" << endl;
 	for(int row = 0; row < 3; row++)
 	{
-		cout << static_cast<char>('a' + row) << '\t';
+		cout << (char)('a' + row) << '\t';
 		for(int col = 0; col < 3; col++)
 		{
 			if(board[row][col] == 'X')

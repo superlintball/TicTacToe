@@ -75,7 +75,6 @@ int main()
 					{
 						oWins++;
 					}
-					cout << "X wins: " << xWins << " O wins: " << oWins << endl;
 					gameEnd = true;
 
 				} else if (checkTie(board, B))
@@ -86,6 +85,7 @@ int main()
 
 				if(gameEnd)
 				{
+					cout << "X wins:" << xWins << " O wins:" << oWins << endl;
 					//if the game ended, ask if they want to play again
 					cout << "Play Again? (y/n)" << endl;
 					//Switch the playing variable to false if they say no
@@ -100,6 +100,10 @@ int main()
 					if(keepPlaying == 'n' || keepPlaying == 'N')
 					{
 						stillPlaying = false;
+					} else
+					{
+						clearBoard(board, B);
+						printBoard(board);
 					}
 				}
 

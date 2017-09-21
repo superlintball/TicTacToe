@@ -82,13 +82,14 @@ int main()
 					cout << "Looks like it's a tie!" << endl;
 					gameEnd = true;
 				}
-
+				
+				//if the game just ended, either by tie or win
 				if(gameEnd)
 				{
+					//output wins and ask if they want to play again
 					cout << "X wins:" << xWins << " O wins:" << oWins << endl;
-					//if the game ended, ask if they want to play again
 					cout << "Play Again? (y/n)" << endl;
-					//Switch the playing variable to false if they say no
+					//keep asking until the answer is valid
 					char keepPlaying = 'w';
 					cin >> keepPlaying;
 					while (!(keepPlaying == 'y' || keepPlaying == 'n' || 
@@ -97,6 +98,8 @@ int main()
 						cout << "I couldn't understand that. Play again? (y/n)" << endl;
 						cin >> keepPlaying;
 					}
+
+					//signal program to end if no; reset board if yes
 					if(keepPlaying == 'n' || keepPlaying == 'N')
 					{
 						stillPlaying = false;
@@ -107,7 +110,7 @@ int main()
 					}
 				}
 
-				//switch turn regardless of win
+				//switch turn regardless of game end
 				if (turn == X)
 				{
 					turn = O;
@@ -158,6 +161,7 @@ void printBoard(int board[3][3])
 
 }
 
+//check if user input is a valid board space
 bool checkValid(char input[5])
 {
 	if(input[2] != '\0')
@@ -178,6 +182,7 @@ bool checkValid(char input[5])
 	}
 }
 
+//check to see if any spaces are blank
 bool checkTie(int board[3][3], int B)
 {
 	for(int row = 0; row < 3; row++)

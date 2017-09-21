@@ -192,7 +192,8 @@ bool checkTie(int board[3][3], int B)
 	return true;
 }
 
-//check if the player has won by checking all win conditions
+//code from my old Java TicTacToe project, adapted to C++
+//checks if the player has won by checking all win conditions
 bool checkWin(int board[3][3], int player)
 {
 	//check diagonals
